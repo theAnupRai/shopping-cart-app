@@ -1,21 +1,18 @@
-import React from 'react'
-import {FcDeleteDatabase} from 'react-icons/fc'
-import { remove } from '../redux/Slices/CartSlice'
-import { useDispatch } from 'react-redux'
+import React from "react";
+import { FcDeleteDatabase } from "react-icons/fc";
+import { remove } from "../redux/Slices/CartSlice";
+import { useDispatch } from "react-redux";
 
-const CartItem = ({item, itemIndex}) => {
-
+const CartItem = ({ item, itemIndex }) => {
   const dispatch = useDispatch();
 
   const removeFromCart = () => {
     dispatch(remove(item.id));
     // toast.success("Item Removed");
-  }
+  };
   return (
     <div>
-
       <div>
-
         <div>
           <img src={item.image} alt="image of item in cart" />
         </div>
@@ -26,15 +23,13 @@ const CartItem = ({item, itemIndex}) => {
           <div>
             <p>{item.price}</p>
             <div onClick={removeFromCart}>
-              <FcDeleteDatabase/>
+              <FcDeleteDatabase />
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default CartItem
+export default CartItem;
